@@ -46,6 +46,22 @@ mod string3 {
     }
 }
 
+// split_whitespace() and collect
+mod string4 {
+    pub fn string4_examples() {
+        let text = "The red fox and the lazy dog";
+        println!("text = {}", text);
+        let words: Vec<&str> = text.split_whitespace().collect();
+        println!("words = {:?}", words);
+        let mut words = Vec::new();
+        words.extend(text.split_whitespace());
+        println!("words := {:?}", words);
+
+        let stripped: String = text.chars().filter(|ch| !ch.is_whitespace()).collect();
+        println!("stripped: {}", stripped);
+    }
+}
+
 // push and pop on String object
 mod string5 {
     pub fn string5_examples() {
@@ -83,6 +99,7 @@ pub fn strings_examples() {
     string1::string1_examples();
     string2::string2_examples();
     string3::string3_examples();
+    string4::string4_examples();
     string5::string5_examples();
     string6::string6_examples();
 }
