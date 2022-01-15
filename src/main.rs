@@ -29,6 +29,11 @@ mod basictut {
         basics::findrope::findrope_examples();
     }
 
+    // Arrays and Slices
+    fn arrays_and_slices() {
+        basics::arrslice::arrslice_example();
+    }
+
     // entry point
     pub fn basictut_examples() {
         println!("---------------");
@@ -51,6 +56,10 @@ mod basictut {
         println!("Import and Include Stuff");
         println!("------------------------");
         include_import_stuff();
+        println!("-----------------");
+        println!("Arrays and Slices");
+        println!("-----------------");
+        arrays_and_slices();
     }
 }
 
