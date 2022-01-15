@@ -49,6 +49,11 @@ mod basictut {
         basics::vectors::vectors_examples();
     }
 
+    // Iterators
+    fn iterators() {
+        basics::iterators::iterators_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -89,6 +94,10 @@ mod basictut {
         println!("Vectors");
         println!("-------");
         vectors();
+        println!("---------");
+        println!("Iterators");
+        println!("---------");
+        iterators();
     }
 }
 
