@@ -16,6 +16,19 @@ mod vec3 {
     }
 }
 
+// sort() and dedup()
+mod vec4 {
+    pub fn vec4_example() {
+        let mut v1 = vec![1, 10, 5, 1, 2, 11, 2, 40];
+        println!("v1 = {:?}", v1);
+        v1.sort();
+        println!("v1.sort() = {:?}", v1);
+        v1.dedup();
+        println!("v1.dedup() = {:?}", v1);
+    }
+}
+
 pub fn morevecs_examples() {
     vec3::vec3_example();
+    vec4::vec4_example();
 }
