@@ -19,11 +19,29 @@ mod basictut {
         basics::addup::addup_example();
     }
 
+    /// Functions
+    fn funtype_examples() {
+        basics::funtype::fun_examples();
+    }
+
     // entry point
-    pub fn basictut_example() {
+    pub fn basictut_examples() {
+        println!("---------------");
+        println!("Basics tutorial");
+        println!("---------------");
         basics_tutorial();
+        println!("----------------------");
+        println!("Loops and conditionals");
+        println!("----------------------");
         loopif_example();
+        println!("------------------------------------");
+        println!("Immutable, mutable, and type casting");
+        println!("------------------------------------");
         immcast_example();
+        println!("----------------------");
+        println!("User-defined functions");
+        println!("----------------------");
+        funtype_examples();
     }
 }
 
@@ -31,5 +49,8 @@ mod basictut {
 // MAIN DRIVER
 // -----------
 fn main() {
-    basictut::basictut_example();
+    println!("============");
+    println!("   BASICS   ");
+    println!("============");
+    basictut::basictut_examples();
 }
