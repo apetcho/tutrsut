@@ -26,6 +26,26 @@ mod string2 {
     }
 }
 
+// strings and UTF-8
+mod string3 {
+    pub fn string3_examples() {
+        let multilingual = "Good glück. Voilà";
+        println!("text = {}", multilingual);
+        for ch in multilingual.chars() {
+            print!("'{}' ", ch);
+        }
+        println!("");
+        println!("len = {}", multilingual.len());
+        println!("count = {}", multilingual.chars().count());
+
+        let maybe = multilingual.find('ü');
+        if maybe.is_some() {
+            let hi = &multilingual[maybe.unwrap()..];
+            println!("From 'ü' onward: {}", hi);
+        }
+    }
+}
+
 // push and pop on String object
 mod string5 {
     pub fn string5_examples() {
@@ -62,6 +82,7 @@ mod string6 {
 pub fn strings_examples() {
     string1::string1_examples();
     string2::string2_examples();
+    string3::string3_examples();
     string5::string5_examples();
     string6::string6_examples();
 }
