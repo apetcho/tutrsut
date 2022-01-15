@@ -59,6 +59,11 @@ mod basictut {
         basics::morevecs::morevecs_examples();
     }
 
+    // Strings
+    fn strings_tut() {
+        basics::strings::strings_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -107,6 +112,10 @@ mod basictut {
         println!("More about vectors");
         println!("------------------");
         more_about_vectors();
+        println!("-------");
+        println!("Strings");
+        println!("-------");
+        strings_tut();
     }
 }
 
