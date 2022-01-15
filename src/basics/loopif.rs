@@ -22,7 +22,18 @@ mod for2 {
     }
 }
 
+// Tenary operator-like
+mod for3 {
+    pub fn for3_example() {
+        for i in 0..5 {
+            let even_odd = if i % 2 == 0 { "even" } else { "odd" };
+            println!("{} {}", even_odd, i);
+        }
+    }
+}
+
 pub fn loop_and_if_example() {
     for1::for1_example();
     for2::for2_example();
+    for3::for3_example();
 }
