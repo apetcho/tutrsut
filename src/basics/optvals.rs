@@ -11,6 +11,13 @@ mod slice2 {
         println!("first:: {} {}", first.is_some(), first.is_none());
         println!("last:: {} {}", last.is_some(), last.is_none());
         println!("first value: {}", first.unwrap());
+        let maybe_last = slice.get(5);
+        let last = if maybe_last.is_some() {
+            *maybe_last.unwrap()
+        } else {
+            -1
+        };
+        println!("last = {}", last);
     }
 }
 
