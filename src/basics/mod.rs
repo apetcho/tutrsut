@@ -8,3 +8,4 @@ pub mod loopif;
 pub mod optvals;
 pub mod slicedice;
 pub mod vectors;
+pub mod morevecs;

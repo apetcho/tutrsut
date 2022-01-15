@@ -54,6 +54,11 @@ mod basictut {
         basics::iterators::iterators_examples();
     }
 
+    // More about vectors ...
+    fn more_about_vectors() {
+        basics::morevecs::morevecs_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -98,6 +103,10 @@ mod basictut {
         println!("Iterators");
         println!("---------");
         iterators();
+        println!("------------------");
+        println!("More about vectors");
+        println!("------------------");
+        more_about_vectors();
     }
 }
 
