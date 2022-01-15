@@ -27,7 +27,19 @@ mod iter23 {
     }
 }
 
+// Idiomatic use of iterator to perform sum of array of integers
+mod sum1 {
+    pub fn sum1_example() {
+        let sum: i32 = (0..5).sum();
+        println!("sum1 = {}", sum);
+
+        let sum: i64 = [10, 20, 30].iter().sum();
+        println!("sum2 = {}", sum);
+    }
+}
+
 pub fn iterators_examples() {
     iter1::iter1_example();
     iter23::iter23_example();
+    sum1::sum1_example();
 }
