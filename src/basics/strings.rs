@@ -13,6 +13,21 @@ mod string1 {
     }
 }
 
+// push and pop on String object
+mod string5 {
+    pub fn string5_examples() {
+        let mut s = String::new();
+        s.push('H');
+        s.push_str("ello");
+        s.push(' ');
+        s += "Rust String!";
+        println!("s = {}", s);
+        println!("s.pop() = {:?}", s.pop());
+        println!("s = {}", s);
+    }
+}
+
 pub fn strings_examples() {
     string1::string1_examples();
+    string5::string5_examples();
 }
