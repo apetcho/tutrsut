@@ -27,7 +27,27 @@ mod string5 {
     }
 }
 
+// to_string() and format!
+mod string6 {
+    fn array_to_str(arr: &[i32]) -> String {
+        let mut res = '['.to_string();
+        for v in arr {
+            res += &v.to_string();
+            res.push(',');
+        }
+        res.pop();
+        res.push(']');
+        res
+    }
+    pub fn string6_examples() {
+        let arr = array_to_str(&[10, 20, 30]);
+        let res = format!("arr = {}", arr);
+        println!("{}", res);
+    }
+}
+
 pub fn strings_examples() {
     string1::string1_examples();
     string5::string5_examples();
+    string6::string6_examples();
 }
