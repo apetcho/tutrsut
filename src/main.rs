@@ -64,6 +64,11 @@ mod basictut {
         basics::strings::strings_examples();
     }
 
+    // Getting Command Line Arguments
+    fn get_cmd_args() {
+        basics::cmdargs::cmdargs_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -116,6 +121,10 @@ mod basictut {
         println!("Strings");
         println!("-------");
         strings_tut();
+        println!("------------------------------");
+        println!("Getting Command Line Arguments");
+        println!("------------------------------");
+        get_cmd_args();
     }
 }
 
