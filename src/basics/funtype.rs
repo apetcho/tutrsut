@@ -60,9 +60,26 @@ mod fun2 {
     }
 }
 
+// Pass mutable reference
+mod fun3 {
+    // mutable references
+    fn modifies(x: &mut f64) {
+        *x = 1.0;
+    }
+
+    pub fn fun3_example() {
+        let mut res = 0.0;
+        println!("Before: res = {}", res);
+        modifies(&mut res);
+        println!("After : res = {}", res);
+    }
+}
+
 // entry point
 pub fn fun_examples() {
     fun1::fun1_example();
     println!("----- Pass by reference -----");
     fun2::fun2_examples();
+    println!("----- Pass by mutable reference -----");
+    fun3::fun3_example();
 }
