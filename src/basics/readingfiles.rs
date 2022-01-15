@@ -57,8 +57,26 @@ mod file2 {
     }
 }
 
+// io::Result<T>
+mod file3 {
+    use super::{env, io, File, Read};
+
+    fn read_to_string(filename: &str) -> io::Result<String> {
+        let mut file = File::open(filename)?;
+        let mut text = String::new();
+        file.read_to_string(&mut text)?;
+        Ok(text)
+    }
+    pub fn file3_examples() {
+        let file = env::args().nth(2).expect("Please supply a filename");
+        let text = read_to_string(&file).expect("Bad file man!");
+        println!("{} had {} bytes", file, text.len())
+    }
+}
+
 pub fn readingfiles_examples() {
     file1::file1_examples();
     resultintro::resultintro_examples();
     file2::file2_examples();
+    file3::file3_examples();
 }
