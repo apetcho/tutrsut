@@ -48,6 +48,11 @@ mod slice4 {
         for s in slice.windows(2) {
             println!("window => {:?}", s);
         }
+
+        // chunks()
+        for s in slice.chunks(2) {
+            println!("chunks => {:?}", s);
+        }
     }
 }
 
