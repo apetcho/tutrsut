@@ -1,6 +1,7 @@
 //! Reading From Files
 use std::env;
 use std::fs::File;
+use std::io;
 use std::io::Read;
 
 mod file1 {
@@ -34,7 +35,30 @@ mod resultintro {
     }
 }
 
+// Using Result
+mod file2 {
+    use super::{env, io, File, Read};
+    fn read_to_string(filename: &str) -> Result<String, io::Error> {
+        let mut file = match File::open(&filename) {
+            Ok(f) => f,
+            Err(e) => return Err(e),
+        };
+
+        let mut text = String::new();
+        match file.read_to_string(&mut text) {
+            Ok(_) => Ok(text),
+            Err(e) => Err(e),
+        }
+    }
+    pub fn file2_examples() {
+        let file = env::args().nth(2).expect("Please supply a filename");
+        let text = read_to_string(&file).expect("Bad file man!");
+        println!("{} had {} bytes", file, text.len());
+    }
+}
+
 pub fn readingfiles_examples() {
     file1::file1_examples();
     resultintro::resultintro_examples();
+    file2::file2_examples();
 }
