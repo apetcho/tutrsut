@@ -34,6 +34,11 @@ mod basictut {
         basics::arrslice::arrslice_example();
     }
 
+    // Slicing and Dicing
+    fn slicing_and_dicing() {
+        basics::slicedice::slicedice_examples();
+    }
+
     // entry point
     pub fn basictut_examples() {
         println!("---------------");
@@ -60,6 +65,10 @@ mod basictut {
         println!("Arrays and Slices");
         println!("-----------------");
         arrays_and_slices();
+        println!("------------");
+        println!("More slicing");
+        println!("------------");
+        slicing_and_dicing();
     }
 }
 
