@@ -24,6 +24,11 @@ mod basictut {
         basics::funtype::fun_examples();
     }
 
+    /// Import and include-like stuff
+    fn include_import_stuff() {
+        basics::findrope::findrope_examples();
+    }
+
     // entry point
     pub fn basictut_examples() {
         println!("---------------");
@@ -42,6 +47,10 @@ mod basictut {
         println!("User-defined functions");
         println!("----------------------");
         funtype_examples();
+        println!("------------------------");
+        println!("Import and Include Stuff");
+        println!("------------------------");
+        include_import_stuff();
     }
 }
 
