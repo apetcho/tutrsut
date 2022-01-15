@@ -69,6 +69,11 @@ mod basictut {
         basics::cmdargs::cmdargs_examples();
     }
 
+    // Matching
+    fn matching_tut() {
+        basics::matching::matching_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -125,6 +130,10 @@ mod basictut {
         println!("Getting Command Line Arguments");
         println!("------------------------------");
         get_cmd_args();
+        println!("--------");
+        println!("Matching");
+        println!("--------");
+        matching_tut();
     }
 }
 

@@ -11,3 +11,4 @@ pub mod optvals;
 pub mod slicedice;
 pub mod strings;
 pub mod vectors;
+pub mod matching;
