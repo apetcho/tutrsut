@@ -6,3 +6,4 @@ pub mod hello;
 pub mod loopif;
 pub mod optvals;
 pub mod slicedice;
+pub mod vectors;

@@ -44,7 +44,14 @@ mod basictut {
         basics::optvals::optional_values_examples();
     }
 
+    // Vectors::1
+    fn vectors() {
+        basics::vectors::vectors_examples();
+    }
+
+    // ***********
     // entry point
+    // ***********
     pub fn basictut_examples() {
         println!("---------------");
         println!("Basics tutorial");
@@ -78,6 +85,10 @@ mod basictut {
         println!("Optional Values");
         println!("---------------");
         optional_values();
+        println!("-------");
+        println!("Vectors");
+        println!("-------");
+        vectors();
     }
 }
 
