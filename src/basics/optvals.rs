@@ -18,6 +18,9 @@ mod slice2 {
             -1
         };
         println!("last = {}", last);
+
+        let last = *slice.get(5).unwrap_or(&-1);
+        println!("last := {}", last);
     }
 }
 
