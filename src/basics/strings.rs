@@ -13,6 +13,19 @@ mod string1 {
     }
 }
 
+// slice and &str and String
+mod string2 {
+    pub fn string2_examples() {
+        let text = "static";
+        let string = "dynamic".to_string();
+
+        let text_s = &text[1..];
+        let string_s = &string[2..4];
+
+        println!("slices {:?} {:?}", text_s, string_s);
+    }
+}
+
 // push and pop on String object
 mod string5 {
     pub fn string5_examples() {
@@ -48,6 +61,7 @@ mod string6 {
 
 pub fn strings_examples() {
     string1::string1_examples();
+    string2::string2_examples();
     string5::string5_examples();
     string6::string6_examples();
 }
