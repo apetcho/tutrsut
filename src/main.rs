@@ -74,6 +74,11 @@ mod basictut {
         basics::matching::matching_examples();
     }
 
+    // Reading From Files
+    fn reading_from_files() {
+        basics::readingfiles::readingfiles_examples();
+    }
+
     // ***********
     // entry point
     // ***********
@@ -134,6 +139,10 @@ mod basictut {
         println!("Matching");
         println!("--------");
         matching_tut();
+        println!("------------------");
+        println!("Reading From Files");
+        println!("------------------");
+        reading_from_files();
     }
 }
 
