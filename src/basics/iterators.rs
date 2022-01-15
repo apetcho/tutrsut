@@ -11,6 +11,23 @@ mod iter1 {
     }
 }
 
+// Iterator over array
+mod iter23 {
+    pub fn iter23_example() {
+        let arr = [10, 20, 30];
+        for i in arr.iter() {
+            println!("=> {}", i);
+        }
+
+        // slices are implicitely converted into iterators
+        let slice = &arr;
+        for i in slice {
+            println!("{}", i);
+        }
+    }
+}
+
 pub fn iterators_examples() {
     iter1::iter1_example();
+    iter23::iter23_example();
 }
