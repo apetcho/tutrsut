@@ -39,6 +39,11 @@ mod basictut {
         basics::slicedice::slicedice_examples();
     }
 
+    // Optional Values
+    fn optional_values() {
+        basics::optvals::optional_values_examples();
+    }
+
     // entry point
     pub fn basictut_examples() {
         println!("---------------");
@@ -69,6 +74,10 @@ mod basictut {
         println!("More slicing");
         println!("------------");
         slicing_and_dicing();
+        println!("---------------");
+        println!("Optional Values");
+        println!("---------------");
+        optional_values();
     }
 }
 
