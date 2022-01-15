@@ -8,6 +8,9 @@ mod slice2 {
         let last = slice.get(5);
         println!("first: {:?}", first);
         println!("last: {:?}", last);
+        println!("first:: {} {}", first.is_some(), first.is_none());
+        println!("last:: {} {}", last.is_some(), last.is_none());
+        println!("first value: {}", first.unwrap());
     }
 }
 
