@@ -38,8 +38,22 @@ mod sum1 {
     }
 }
 
+// windows() method
+mod slice4 {
+    pub fn slice4_example() {
+        let ints = [1, 2, 3, 4, 5];
+        let slice = &ints;
+
+        println!("slice = {:?}", slice);
+        for s in slice.windows(2) {
+            println!("window => {:?}", s);
+        }
+    }
+}
+
 pub fn iterators_examples() {
     iter1::iter1_example();
     iter23::iter23_example();
     sum1::sum1_example();
+    slice4::slice4_example();
 }
