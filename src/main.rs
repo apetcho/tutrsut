@@ -1,5 +1,10 @@
 mod basics;
 
-fn main() {
+/// Basics tutorial
+fn basics_tutorial() {
     basics::hello::hello_example();
+}
+
+fn main() {
+    basics_tutorial();
 }
