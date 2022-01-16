@@ -1,3 +1,4 @@
+mod enums;
 mod genericfun;
 mod iterfltrange;
 mod lifetbite;
@@ -57,6 +58,13 @@ pub mod tutorial {
         println!("");
     }
 
+    // Simple Enums
+    fn simple_enums() {
+        enums::enums_examples();
+        println!("");
+    }
+
+    // ***
     pub fn structs_enums_and_matching() {
         println!("-------------");
         println!("Move Semantic");
@@ -90,5 +98,9 @@ pub mod tutorial {
         println!("Generic Functions");
         println!("-----------------");
         genericfuntut();
+        println!("------------");
+        println!("Simple Enums");
+        println!("------------");
+        simple_enums();
     }
 }
