@@ -34,7 +34,7 @@ mod trait3 {
     // ***
     pub fn trait3_examples() {
         for x in range(0.0, 1.0, 0.1) {
-            println!("{} ", x);
+            println!("{:.1} ", x);
         }
     }
 }
