@@ -66,7 +66,51 @@ mod struct2 {
     }
 }
 
+// using #[derive(Debug)]
+mod struct34 {
+    #[allow(unused_imports)]
+    use std::fmt;
+
+    #[derive(Debug)]
+    struct Person {
+        first_name: String,
+        last_name: String,
+    }
+
+    impl Person {
+        fn new(first: &str, last: &str) -> Person {
+            Person {
+                first_name: first.to_string(),
+                last_name: last.to_string(),
+            }
+        }
+
+        fn full_name(&self) -> String {
+            format!("{} {}", self.first_name, self.last_name)
+        }
+
+        fn set_first_name(&mut self, name: &str) {
+            self.first_name = name.to_string();
+        }
+
+        fn to_tuple(self) -> (String, String) {
+            (self.first_name, self.last_name)
+        }
+    }
+
+    // --
+    pub fn struct34_examples() {
+        let mut p = Person::new("John", "Smith");
+        println!("{:?}", p);
+        p.set_first_name("Jane");
+        println!("{:?}", p);
+        println!("{}", p.full_name());
+        println!("{:?}", p.to_tuple());
+    }
+}
+
 pub fn structs_examples() {
     struct1::struct1_examples();
     struct2::struct2_examples();
+    struct34::struct34_examples();
 }
