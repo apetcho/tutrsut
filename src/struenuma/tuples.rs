@@ -19,6 +19,14 @@ mod tuple1 {
         assert_eq!(tuple.0, "Hello");
         assert_eq!(tuple.1, 5);
         assert_eq!(tuple.2, 'c');
+
+        // Iterator methods and Tuples
+        for t in ["Fortran", "C", "C++", "Python", "Julia"]
+            .iter()
+            .enumerate()
+        {
+            println!("{} => {}", t.0, t.1);
+        }
     }
 }
 
