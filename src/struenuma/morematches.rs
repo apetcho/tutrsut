@@ -34,6 +34,10 @@ mod mam {
         if let Some((_, ref s)) = ot {
             assert_eq!(s, "hello");
         }
+
+        if let Ok(n) = "42".parse::<i32>() {
+            println!("=> n = {}", n);
+        }
     }
 }
 
