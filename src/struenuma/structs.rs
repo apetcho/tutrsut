@@ -34,6 +34,11 @@ mod struct2 {
         fn full_name(&self) -> String {
             format!("{} {}", self.first_name, self.last_name)
         }
+
+        // Self, copy()
+        fn copy(&self) -> Self {
+            Self::new(&self.first_name, &self.last_name)
+        }
     }
 
     // -- using Person
@@ -41,6 +46,8 @@ mod struct2 {
         let p = Person::new("John", "Smith");
         println!("person: {} {}", p.first_name, p.last_name);
         println!("full_name(): {}", p.full_name());
+        let pcopy = p.copy();
+        println!("copy(): {}", pcopy.full_name());
     }
 }
 
