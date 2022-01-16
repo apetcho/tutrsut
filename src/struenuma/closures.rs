@@ -41,6 +41,14 @@ mod closurestut {
         let mut changer = || s = "Rust";
         changer();
         println!("After :: changer(): s= {}", s);
+        let lang = "C++";
+        {
+            println!("Before:: changer(): lang = {}", lang);
+            let mut changer = || s = "Rust";
+            changer();
+            println!("Before:: changer(): lang = {}", lang);
+        }
+        assert_eq!(lang, "C++");
     }
 }
 
