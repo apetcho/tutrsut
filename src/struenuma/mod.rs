@@ -1,6 +1,7 @@
 mod closures;
 mod enums;
 mod genericfun;
+mod genstructs;
 mod iterfltrange;
 mod lifetbite;
 mod morematches;
@@ -86,6 +87,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // ---
+    fn genstructstut() {
+        genstructs::genstructs_examples();
+        println!("");
+    }
+
     // ***
     pub fn structs_enums_and_matching() {
         println!("-------------");
@@ -136,5 +143,9 @@ pub mod tutorial {
         println!("Structs with Dynamic Data");
         println!("-------------------------");
         structsdyntut();
+        println!("---------------");
+        println!("Generic Structs");
+        println!("---------------");
+        genstructstut();
     }
 }
