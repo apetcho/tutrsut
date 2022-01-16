@@ -36,6 +36,10 @@ mod trait3 {
         for x in range(0.0, 1.0, 0.1) {
             println!("{:.1} ", x);
         }
+
+        // --- using some iterator methods
+        let v: Vec<f64> = range(0.0, 1.0, 0.1).map(|x| x.sin()).collect();
+        println!("v = {:?}", v);
     }
 }
 
