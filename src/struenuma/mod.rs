@@ -2,6 +2,7 @@ mod enums;
 mod genericfun;
 mod iterfltrange;
 mod lifetbite;
+mod morematches;
 mod moveit;
 mod scopevars;
 mod structs;
@@ -64,6 +65,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // --
+    fn more_about_matching() {
+        morematches::morematches_examples();
+        println!("");
+    }
+
     // ***
     pub fn structs_enums_and_matching() {
         println!("-------------");
@@ -102,5 +109,9 @@ pub mod tutorial {
         println!("Simple Enums");
         println!("------------");
         simple_enums();
+        println!("-------------------");
+        println!("More about Matching");
+        println!("-------------------");
+        more_about_matching();
     }
 }
