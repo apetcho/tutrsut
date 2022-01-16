@@ -29,12 +29,18 @@ mod struct2 {
                 last_name: last.to_string(),
             }
         }
+
+        //
+        fn full_name(&self) -> String {
+            format!("{} {}", self.first_name, self.last_name)
+        }
     }
 
     // -- using Person
     pub fn struct2_examples() {
         let p = Person::new("John", "Smith");
         println!("person: {} {}", p.first_name, p.last_name);
+        println!("full_name(): {}", p.full_name());
     }
 }
 
