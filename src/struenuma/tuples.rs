@@ -13,6 +13,12 @@ mod tuple1 {
         // can _extract_ (unpack) the values
         let (add, mul) = t;
         println!("add: {}, mul: {}", add, mul);
+
+        // --- Tuple may contain *different types*
+        let tuple = ("Hello", 5, 'c');
+        assert_eq!(tuple.0, "Hello");
+        assert_eq!(tuple.1, 5);
+        assert_eq!(tuple.2, 'c');
     }
 }
 
