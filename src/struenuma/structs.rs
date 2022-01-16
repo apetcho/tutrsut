@@ -39,6 +39,11 @@ mod struct2 {
         fn copy(&self) -> Self {
             Self::new(&self.first_name, &self.last_name)
         }
+
+        // modifiying through &mut self
+        fn set_first_name(&mut self, name: &str) {
+            self.first_name = name.to_string();
+        }
     }
 
     // -- using Person
@@ -48,6 +53,9 @@ mod struct2 {
         println!("full_name(): {}", p.full_name());
         let pcopy = p.copy();
         println!("copy(): {}", pcopy.full_name());
+        let mut pcopy2 = pcopy.copy();
+        pcopy2.set_first_name("Cooper");
+        println!("set_first_name(): {}", pcopy2.full_name());
     }
 }
 
