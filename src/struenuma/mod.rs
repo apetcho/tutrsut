@@ -1,3 +1,4 @@
+mod closures;
 mod enums;
 mod genericfun;
 mod iterfltrange;
@@ -71,6 +72,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // -- Closures
+    fn closures_tut() {
+        closures::closures_examples();
+        println!("");
+    }
+
     // ***
     pub fn structs_enums_and_matching() {
         println!("-------------");
@@ -113,5 +120,9 @@ pub mod tutorial {
         println!("More about Matching");
         println!("-------------------");
         more_about_matching();
+        println!("--------");
+        println!("Closures");
+        println!("--------");
+        closures_tut();
     }
 }
