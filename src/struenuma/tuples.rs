@@ -27,6 +27,12 @@ mod tuple1 {
         {
             println!("{} => {}", t.0, t.1);
         }
+
+        let languages = ["Fortran", "C", "C++", "Rust"];
+        let years = [1957, 1970, 1979, 2014];
+        for yela in languages.iter().zip(years.iter()) {
+            println!("{} => {}", yela.1, yela.0);
+        }
     }
 }
 
