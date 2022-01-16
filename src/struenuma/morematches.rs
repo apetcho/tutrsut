@@ -36,8 +36,10 @@ mod mam {
         }
 
         if let Ok(n) = "42".parse::<i32>() {
-            println!("=> n = {}", n);
+            println!("=> n={}", n);
         }
+        let n: i32 = "42".parse().unwrap();
+        println!("=> n={}", n);
     }
 }
 
