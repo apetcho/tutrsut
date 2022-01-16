@@ -31,9 +31,19 @@ mod enum3 {
     fn eat_and_dump(v: Value) {
         use Value::*;
         match v {
-            Number(n) => println!("number is {}", n),
-            Str(s) => println!("string is '{}'", s),
-            Bool(b) => println!("boolean is {}", b),
+            Number(n) => println!("= number is {}", n),
+            Str(s) => println!("= string is '{}'", s),
+            Bool(b) => println!("= boolean is {}", b),
+        }
+    }
+
+    // --
+    fn dump(v: &Value) {
+        use Value::*;
+        match *v {
+            Number(n) => println!("* number is {}", n),
+            Str(ref s) => println!("* string is '{}'", s),
+            Bool(b) => println!("* boolean is {}", b),
         }
     }
 
@@ -42,6 +52,9 @@ mod enum3 {
         let n = Number(2.3);
         let s = Str("Hello".to_string());
         let b = Bool(true);
+        dump(&n);
+        dump(&s);
+        dump(&b);
         println!("n = {:?}, s = {:?}, b = {:?}", n, s, b);
         eat_and_dump(n);
         eat_and_dump(s);
