@@ -2,6 +2,7 @@ mod lifetbite;
 mod moveit;
 mod scopevars;
 mod structs;
+mod traits;
 mod tuples;
 
 pub mod tutorial {
@@ -33,6 +34,13 @@ pub mod tutorial {
     // Lifetime Start to Bite
     fn lifetimetut() {
         lifetbite::lifetbite_examples();
+        println!("");
+    }
+
+    // Traits
+    fn traitstut() {
+        traits::traits_examples();
+        println!("");
     }
 
     pub fn structs_enums_and_matching() {
@@ -56,5 +64,9 @@ pub mod tutorial {
         println!("Lifetime Start to Bite");
         println!("----------------------");
         lifetimetut();
+        println!("------");
+        println!("Traits");
+        println!("------");
+        traitstut();
     }
 }
