@@ -35,6 +35,12 @@ mod closurestut {
         mutate(|| s = "Hello");
         println!("After : s = {}", s);
         assert_eq!(s, "Hello");
+        // -- closure and mutable borrow
+        let mut s = "World";
+        println!("Before:: changer(): s= {}", s);
+        let mut changer = || s = "Rust";
+        changer();
+        println!("After :: changer(): s= {}", s);
     }
 }
 
