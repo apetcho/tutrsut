@@ -1,3 +1,4 @@
+mod lifetbite;
 mod moveit;
 mod scopevars;
 mod structs;
@@ -29,6 +30,11 @@ pub mod tutorial {
         println!("");
     }
 
+    // Lifetime Start to Bite
+    fn lifetimetut() {
+        lifetbite::lifetbite_examples();
+    }
+
     pub fn structs_enums_and_matching() {
         println!("-------------");
         println!("Move Semantic");
@@ -46,5 +52,9 @@ pub mod tutorial {
         println!("Structs");
         println!("-------");
         structstut();
+        println!("----------------------");
+        println!("Lifetime Start to Bite");
+        println!("----------------------");
+        lifetimetut();
     }
 }
