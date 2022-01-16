@@ -1,3 +1,4 @@
+mod genericfun;
 mod iterfltrange;
 mod lifetbite;
 mod moveit;
@@ -50,6 +51,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // Generic Functions
+    fn genericfuntut() {
+        genericfun::genericfun_examples();
+        println!("");
+    }
+
     pub fn structs_enums_and_matching() {
         println!("-------------");
         println!("Move Semantic");
@@ -79,5 +86,9 @@ pub mod tutorial {
         println!("Example: Iterator over floating-point range");
         println!("-------------------------------------------");
         iterfltrangetut();
+        println!("-----------------");
+        println!("Generic Functions");
+        println!("-----------------");
+        genericfuntut();
     }
 }
