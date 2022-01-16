@@ -50,6 +50,17 @@ impl Node {
             }
         }
     }
+
+    // ---
+    fn visit(&self) {
+        if let Some(ref left) = self.left {
+            left.visit();
+        }
+        println!("'{}'", self.payload);
+        if let Some(ref right) = self.right {
+            right.visit();
+        }
+    }
 }
 
 // ---
@@ -62,4 +73,7 @@ pub fn structsdyn_example() {
     root.insert("four");
 
     println!("BinaryTree: {:#?}", root);
+    // --
+    println!("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    root.visit();
 }
