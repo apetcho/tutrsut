@@ -1,3 +1,4 @@
+mod iterfltrange;
 mod lifetbite;
 mod moveit;
 mod scopevars;
@@ -43,6 +44,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // Example: Iterator over floating-point range
+    fn iterfltrangetut() {
+        iterfltrange::iterfltrange_examples();
+        println!("");
+    }
+
     pub fn structs_enums_and_matching() {
         println!("-------------");
         println!("Move Semantic");
@@ -68,5 +75,9 @@ pub mod tutorial {
         println!("Traits");
         println!("------");
         traitstut();
+        println!("-------------------------------------------");
+        println!("Example: Iterator over floating-point range");
+        println!("-------------------------------------------");
+        iterfltrangetut();
     }
 }
