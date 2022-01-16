@@ -44,6 +44,10 @@ mod struct2 {
         fn set_first_name(&mut self, name: &str) {
             self.first_name = name.to_string();
         }
+        // moving or not moving
+        fn to_tuple(self) -> (String, String) {
+            (self.first_name, self.last_name)
+        }
     }
 
     // -- using Person
@@ -54,8 +58,11 @@ mod struct2 {
         let pcopy = p.copy();
         println!("copy(): {}", pcopy.full_name());
         let mut pcopy2 = pcopy.copy();
+        println!("to_tuple(): {:?}", pcopy.to_tuple());
         pcopy2.set_first_name("Cooper");
         println!("set_first_name(): {}", pcopy2.full_name());
+        //println!("first_name: {}", pcopy.first_name); // Error: pcopy has
+        // .. moved
     }
 }
 
