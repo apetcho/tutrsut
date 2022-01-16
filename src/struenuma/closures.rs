@@ -49,6 +49,14 @@ mod closurestut {
             println!("Before:: changer(): lang = {}", lang);
         }
         assert_eq!(lang, "C++");
+        // --
+        let name = "John Doe".to_string();
+        let age = 45;
+        let clos = move || {
+            println!("name={}, age={}", name, age);
+        };
+        clos();
+        // println!("name={}", name); // error: name has been moved
     }
 }
 
