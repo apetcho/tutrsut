@@ -13,6 +13,22 @@ mod life12 {
     }
 }
 
+// Using Lifetime
+mod life3 {
+    #[derive(Debug)]
+    struct A<'a> {
+        #[allow(dead_code)]
+        s: &'a str,
+    }
+
+    pub fn life3_examples() {
+        let s = "I'm a little string".to_string();
+        let a = A { s: &s };
+        println!("{:?}", a);
+    }
+}
+
 pub fn lifetbite_examples() {
     life12::life12_examples();
+    life3::life3_examples();
 }
