@@ -9,6 +9,14 @@ mod closurestut {
     }
 
     // --
+    fn mutate<F>(mut f: F)
+    where
+        F: FnMut(),
+    {
+        f()
+    }
+
+    // --
     pub fn closurestut_examples() {
         let f = |x| x * x;
         let res = f(10);
@@ -21,6 +29,12 @@ mod closurestut {
         let res1 = apply(3.0, lin);
         let res2 = apply(3.14, |x| x.sin());
         println!("res1={}, res2={}", res1, res2);
+        // -- mutate
+        let mut s = "world";
+        println!("Before: s = {}", s);
+        mutate(|| s = "Hello");
+        println!("After : s = {}", s);
+        assert_eq!(s, "Hello");
     }
 }
 
