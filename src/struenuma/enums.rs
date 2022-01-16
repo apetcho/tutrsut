@@ -47,6 +47,16 @@ mod enum3 {
         }
     }
 
+    impl Value {
+        fn to_str(self) -> Option<String> {
+            if let Value::Str(s) = self {
+                Some(s)
+            } else {
+                None
+            }
+        }
+    }
+
     pub fn enum3_examples() {
         use Value::*;
         let n = Number(2.3);
@@ -59,6 +69,8 @@ mod enum3 {
         eat_and_dump(n);
         eat_and_dump(s);
         eat_and_dump(b);
+        let msg = Value::Str("Rust is Cool".to_string());
+        println!("=msg := {:?}", msg.to_str());
     }
 }
 
