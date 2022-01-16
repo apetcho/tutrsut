@@ -22,6 +22,24 @@ mod scope {
     }
 }
 
+mod ref1 {
+    pub fn ref1_examples() {
+        let s1 = "Hello Rust!".to_string();
+        let mut rs1 = &s1;
+        println!("ref: {}", rs1);
+        {
+            let _tmp = "Hello C and C++!".to_string();
+            //rs1 = &_tmp;
+        } // _tmp dropped here while still borrowed
+          // - borrowed value needs to live until
+        let tmp = "Hello C and C++ buddies".to_string();
+        rs1 = &tmp;
+        println!("ref: {}", rs1);
+        // here
+    }
+}
+
 pub fn scopevars_examples() {
     scope::scope_examples();
+    ref1::ref1_examples();
 }
