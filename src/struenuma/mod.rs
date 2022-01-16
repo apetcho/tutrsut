@@ -7,9 +7,11 @@ mod morematches;
 mod moveit;
 mod scopevars;
 mod structs;
+mod structsdyn;
 mod traits;
 mod tuples;
 
+// ----
 pub mod tutorial {
     use super::*;
     // Rust likes to move it, move it
@@ -78,6 +80,12 @@ pub mod tutorial {
         println!("");
     }
 
+    // Structs with Dynamic Data
+    fn structsdyntut() {
+        structsdyn::structsdyn_example();
+        println!("");
+    }
+
     // ***
     pub fn structs_enums_and_matching() {
         println!("-------------");
@@ -124,5 +132,9 @@ pub mod tutorial {
         println!("Closures");
         println!("--------");
         closures_tut();
+        println!("-------------------------");
+        println!("Structs with Dynamic Data");
+        println!("-------------------------");
+        structsdyntut();
     }
 }
