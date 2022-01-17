@@ -78,8 +78,26 @@ mod proc3 {
 }
 
 // ---
+mod proc4 {
+    use super::*;
+
+    //
+    pub fn proc4_examples() {
+        let mut child = Command::new("rustc")
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .spawn()
+            .expect("no rustc?");
+
+        let res = child.wait();
+        println!("retval = {:?}", res);
+    }
+}
+
+// ---
 pub fn processes_examples() {
     proc1::proc1_examples();
     proc2::proc2_examples();
     proc3::proc3_examples();
+    proc4::proc4_examples();
 }
