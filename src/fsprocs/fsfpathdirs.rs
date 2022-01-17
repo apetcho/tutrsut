@@ -1,6 +1,7 @@
 //! Files, Paths and Directories
 
 use std::env;
+use std::path::Path;
 use std::path::PathBuf;
 
 mod fpath1 {
@@ -62,8 +63,27 @@ mod fpath3 {
 }
 
 // ---
+mod fpath4 {
+    use super::*;
+
+    pub fn fpath4_examples() {
+        let file = env::args().skip(1).next().unwrap_or("mod.rs".to_string());
+        let path = Path::new(&file);
+        match path.metadata() {
+            Ok(data) => {
+                println!("type: {:?}", data.file_type());
+                println!("len : {}", data.len());
+                println!("perm: {:?}", data.permissions());
+                println!("modified: {:?}", data.modified());
+            }
+            Err(e) => println!("error {:?}", e),
+        }
+    }
+}
+// ---
 pub fn fsfpathdirs_examples() {
     fpath1::fpath1_examples();
     fpath2::fpath2_examples();
     fpath3::fpath3_examples();
+    fpath4::fpath4_examples();
 }
