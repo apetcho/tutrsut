@@ -80,10 +80,40 @@ mod fpath4 {
         }
     }
 }
+
+// ---
+mod fpath5 {
+
+    // ---
+    fn dump_dir(dir: &str) -> std::io::Result<()> {
+        for entry in std::fs::read_dir(dir)? {
+            let entry = entry?;
+            let data = entry.metadata()?;
+            let path = entry.path();
+            if data.is_file() {
+                if let Some(ex) = path.extension() {
+                    if ex == "rs" && data.len() > 1024 {
+                        println!("{} length {} ", path.display(), data.len());
+                    }
+                }
+            }
+        }
+
+        Ok(())
+    }
+
+    // ---
+    pub fn fpath5_examples() {
+        println!("");
+        let _r = dump_dir("/Users/oriprox/Documents/cs/rust/src/json/src");
+    }
+}
+
 // ---
 pub fn fsfpathdirs_examples() {
     fpath1::fpath1_examples();
     fpath2::fpath2_examples();
     fpath3::fpath3_examples();
     fpath4::fpath4_examples();
+    fpath5::fpath5_examples();
 }
