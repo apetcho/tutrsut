@@ -1,4 +1,5 @@
 //! Filesystem and Processes
+mod fsfpathdirs;
 mod fsreadfiles;
 mod fswritefiles;
 
@@ -15,6 +16,10 @@ mod tutorial {
         println!("");
     }
     // Files, Paths and Directories
+    fn fsfpathdirstut() {
+        fsfpathdirs::fsfpathdirs_examples();
+        println!("");
+    }
     // Processes
 
     // ----
@@ -27,6 +32,10 @@ mod tutorial {
         println!("   WRITING TO FILES   ");
         println!("----------------------");
         fswritefilestut();
+        println!("----------------------------------");
+        println!("  FILES, PATHS, AND DIRECTORIES   ");
+        println!("----------------------------------");
+        fsfpathdirstut();
     }
 }
 
