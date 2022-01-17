@@ -23,6 +23,23 @@ mod fpath1 {
     }
 }
 
+//
+mod fpath2 {
+    use super::*;
+
+    pub fn fpath2_examples() {
+        let mut path = env::current_dir().expect("Can't access current dir");
+        loop {
+            println!("-> {}", path.display());
+            if !path.pop() {
+                break;
+            }
+        }
+    }
+}
+
+// ---
 pub fn fsfpathdirs_examples() {
     fpath1::fpath1_examples();
+    fpath2::fpath2_examples();
 }
