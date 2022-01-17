@@ -38,8 +38,32 @@ mod fpath2 {
     }
 }
 
+//
+mod fpath3 {
+    use super::*;
+
+    //
+    pub fn fpath3_examples() {
+        let mut path = env::current_dir().expect("Can't access current dir");
+        loop {
+            path.push("config.txt");
+            if path.is_file() {
+                println!("gotcha {}", path.display());
+                break;
+            } else {
+                path.pop();
+            }
+
+            if !path.pop() {
+                break;
+            }
+        }
+    }
+}
+
 // ---
 pub fn fsfpathdirs_examples() {
     fpath1::fpath1_examples();
     fpath2::fpath2_examples();
+    fpath3::fpath3_examples();
 }
