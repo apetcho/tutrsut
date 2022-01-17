@@ -2,6 +2,7 @@
 mod fsfpathdirs;
 mod fsreadfiles;
 mod fswritefiles;
+mod processes;
 
 mod tutorial {
     use super::*;
@@ -21,6 +22,10 @@ mod tutorial {
         println!("");
     }
     // Processes
+    fn processestut() {
+        processes::processes_examples();
+        println!("");
+    }
 
     // ----
     pub fn fsprocstut() {
@@ -36,6 +41,10 @@ mod tutorial {
         println!("  FILES, PATHS, AND DIRECTORIES   ");
         println!("----------------------------------");
         fsfpathdirstut();
+        println!("---------------");
+        println!("   PROCESSES   ");
+        println!("---------------");
+        processestut();
     }
 }
 
