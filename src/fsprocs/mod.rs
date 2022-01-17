@@ -1,5 +1,6 @@
 //! Filesystem and Processes
 mod fsreadfiles;
+mod fswritefiles;
 
 mod tutorial {
     use super::*;
@@ -9,15 +10,23 @@ mod tutorial {
         println!("");
     }
     // Writing To Files
+    fn fswritefilestut() {
+        fswritefiles::fswritefiles_examples();
+        println!("");
+    }
     // Files, Paths and Directories
     // Processes
 
     // ----
     pub fn fsprocstut() {
-        println!("-----------------------------");
-        println!("Another look at Reading Files");
-        println!("-----------------------------");
+        println!("-----------------------------------");
+        println!("   ANOTHER LOOK AT READING FILES   ");
+        println!("-----------------------------------");
         fsreadfilestut();
+        println!("----------------------");
+        println!("   WRITING TO FILES   ");
+        println!("----------------------");
+        fswritefilestut();
     }
 }
 
