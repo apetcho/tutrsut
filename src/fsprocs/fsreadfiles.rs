@@ -17,8 +17,25 @@ mod file1 {
 
         for line in reader.lines() {
             let line = line?;
-            println!("> {}", line);
+            println!("1> {}", line);
         }
+        Ok(())
+    }
+
+    // ---
+    fn read_all_lines2() -> io::Result<()> {
+        println!("");
+        let file = File::open(FNAME)?;
+        let mut reader = io::BufReader::new(file);
+        let mut buf = String::new();
+        while reader.read_line(&mut buf)? > 0 {
+            {
+                let line = buf.trim_end(); // trim_right() is deprecated
+                println!("2> {}", line);
+            }
+            buf.clear();
+        }
+
         Ok(())
     }
 
@@ -26,6 +43,7 @@ mod file1 {
     pub fn file1_examples() {
         //let fname: &str = FNAME;
         let _r = read_all_lines(FNAME);
+        let _r = read_all_lines2();
         //Ok(())
     }
 }
