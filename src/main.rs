@@ -2,6 +2,7 @@
 //mod struenuma;
 //mod fsprocs;
 mod errhandling;
+#[allow(unused_imports)]
 #[macro_use]
 extern crate simple_error;
 
