@@ -33,7 +33,35 @@ mod demo {
         }
     }
 }
+//
+mod erchn {
+    use super::*;
 
+    pub fn erchn_examples() -> Result<()> {
+        use std::env::args;
+        use std::fs::File;
+        use std::io::prelude::*;
+        use std::io::BufReader;
+
+        let file = args().skip(1).next().ok_or(Error::from("provide a file"))?;
+
+        let f = File::open(&file)?;
+        let mut l = 0;
+        for line in BufReader::new(f).lines() {
+            let line = line?;
+            println!("=> {}", line);
+            l += 1;
+            if l == 10 {
+                break;
+            }
+        }
+
+        Ok(())
+    }
+}
+
+// ---
 pub fn errorchain_examples() {
     demo::demo_examples();
+    let _ = erchn::erchn_examples();
 }
