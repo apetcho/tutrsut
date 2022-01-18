@@ -2,6 +2,8 @@
 //mod struenuma;
 //mod fsprocs;
 mod errhandling;
+#[macro_use]
+extern crate simple_error;
 
 // -----------
 // MAIN DRIVER

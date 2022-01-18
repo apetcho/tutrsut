@@ -1,5 +1,6 @@
 //! Error Handling
 mod basicserhdlr;
+mod simplerrs;
 
 // ---
 mod errhdlr {
@@ -15,7 +16,23 @@ mod errhdlr {
     }
 }
 
+// --
+mod simerr {
+    use super::simplerrs;
+
+    pub fn simerr_examples() {
+        simplerrs::simple_error_examples();
+    }
+}
+
 // ---
 pub fn errhandling_examples() {
+    println!("--------------------------");
+    println!("   BASIC ERROR HANDLING   ");
+    println!("--------------------------");
     errhdlr::errhdlr_example();
+    println!("------------------------------------");
+    println!("   SIMPLE-ERROR FOR SIMPLE ERRORS   ");
+    println!("------------------------------------");
+    simerr::simerr_examples();
 }
