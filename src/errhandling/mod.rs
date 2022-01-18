@@ -1,5 +1,6 @@
 //! Error Handling
 mod basicserhdlr;
+mod errorchain;
 mod simplerrs;
 
 // ---

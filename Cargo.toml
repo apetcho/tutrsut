@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 simple-error = "0.2"
+error-chain = "0.12.4"
