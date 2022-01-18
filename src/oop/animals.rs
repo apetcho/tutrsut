@@ -42,6 +42,23 @@ fn quack_ref(q: &dyn Quack) {
 }
 
 // ---
+trait Named {
+    fn name(&self) -> String;
+
+    fn upper_case(&self) -> String {
+        self.name().to_uppercase()
+    }
+}
+
+struct Boo();
+
+impl Named for Boo {
+    fn name(&self) -> String {
+        String::from("boo")
+    }
+}
+
+// ---
 pub fn animals_examples() {
     let duck1 = Duck();
     let duck2 = RandomBird { is_a_parrot: false };
@@ -56,4 +73,9 @@ pub fn animals_examples() {
     for d in ducks {
         quack_ref(d);
     }
+
+    println!("Named Boo");
+    let boo = Boo();
+    println!("boo.name() = {}", boo.name());
+    println!("boo.upper_case() = {}", boo.upper_case());
 }
