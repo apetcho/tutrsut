@@ -11,6 +11,17 @@ where
 {
     q.quack();
 }
+
+// ---
+fn quack_everyone<I>(iter: I)
+where
+    I: Iterator<Item = Box<dyn Quack>>,
+{
+    for d in iter {
+        d.quack();
+    }
+}
+
 // ---
 
 struct Duck();
@@ -49,4 +60,17 @@ impl Quack for i32 {
 pub fn genducks_examples() {
     let duck1 = Duck();
     quack(&duck1);
+
+    // ---
+    let duck1 = Duck();
+    let duck2 = RandomBird { is_a_parrot: false };
+    let parrot = RandomBird { is_a_parrot: true };
+    let n = 4;
+    let ducks: Vec<Box<dyn Quack>> = vec![
+        Box::new(duck1),
+        Box::new(duck2),
+        Box::new(parrot),
+        Box::new(n),
+    ];
+    quack_everyone(ducks.into_iter());
 }
