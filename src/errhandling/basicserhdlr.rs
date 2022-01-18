@@ -30,6 +30,58 @@ mod box_errors {
     }
 }
 
+// ---
+mod error1 {
+    use super::*;
+    use std::fmt;
+
+    #[derive(Debug)]
+    struct MyError {
+        details: String,
+    }
+
+    // ---
+    impl MyError {
+        fn new(msg: &str) -> MyError {
+            MyError {
+                details: String::from(msg),
+            }
+        }
+    }
+
+    // ---
+    impl fmt::Display for MyError {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "{}", self.details)
+        }
+    }
+
+    // ---
+    impl Error for MyError {
+        fn description(&self) -> &str {
+            &self.details
+        }
+    }
+
+    // ---
+    fn raises_my_error(yes: bool) -> Result<(), MyError> {
+        if yes {
+            Err(MyError::new("[MyError] Broken"))
+        } else {
+            Ok(())
+        }
+    }
+
+    pub fn error1_examples() {
+        match raises_my_error(true) {
+            Ok(_) => println!("[SUCCESS]::Cool"),
+            Err(e) => println!("[ERROR]::{}", e),
+        }
+    }
+}
+
+// ---
 pub fn basics_error_handling() {
     box_errors::basicserrtut();
+    error1::error1_examples();
 }
