@@ -81,7 +81,80 @@ mod error1 {
 }
 
 // ---
+mod error2 {
+    use super::*;
+    use std::fmt;
+    use std::num::ParseFloatError;
+
+    #[derive(Debug)]
+    struct MyError {
+        details: String,
+    }
+
+    // ---
+    impl MyError {
+        fn new(msg: &str) -> MyError {
+            MyError {
+                details: String::from(msg),
+            }
+        }
+    }
+
+    // ---
+    impl fmt::Display for MyError {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "{}", self.details)
+        }
+    }
+
+    // ---
+    impl Error for MyError {
+        fn description(&self) -> &str {
+            &self.details
+        }
+    }
+
+    // ---
+    fn raises_my_error(yes: bool) -> Result<(), MyError> {
+        if yes {
+            Err(MyError::new("[MyError] Broken"))
+        } else {
+            Ok(())
+        }
+    }
+
+    // ---
+    impl From<ParseFloatError> for MyError {
+        fn from(err: ParseFloatError) -> Self {
+            #[allow(deprecated)]
+            MyError::new(err.description())
+        }
+    }
+
+    // --
+    fn parse_f64(s: &str, yes: bool) -> Result<f64, MyError> {
+        raises_my_error(yes)?;
+        let x: f64 = s.parse()?;
+        Ok(x)
+    }
+
+    //
+    pub fn error2_examples() {
+        match parse_f64("35", true) {
+            Ok(x) => println!("[SUCCESS] retval={}", x),
+            Err(e) => println!("[ERRROR] retval={}", e),
+        }
+
+        match parse_f64("35", false) {
+            Ok(x) => println!("[SUCCESS] retval={}", x),
+            Err(e) => println!("[ERRROR] retval={}", e),
+        }
+    }
+}
+
+// ---
 pub fn basics_error_handling() {
     box_errors::basicserrtut();
     error1::error1_examples();
+    error2::error2_examples();
 }
