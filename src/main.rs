@@ -1,12 +1,14 @@
 //mod basics;
 //mod struenuma;
 //mod fsprocs;
-mod errhandling;
-#[allow(unused_imports)]
-#[macro_use]
-extern crate simple_error;
-#[macro_use]
-extern crate error_chain;
+
+// mod errhandling;
+// #[allow(unused_imports)]
+// #[macro_use]
+// extern crate simple_error;
+// #[macro_use]
+// extern crate error_chain;
+mod oop;
 
 // -----------
 // MAIN DRIVER
@@ -27,8 +29,13 @@ fn main() {
     //println!("==============================");
     //fsprocs::fsprocs_examples();
 
+    // println!("=====================");
+    // println!("   ERROR HANDLING    ");
+    // println!("=====================");
+    // errhandling::errhandling_examples();
+
     println!("=====================");
     println!("   ERROR HANDLING    ");
     println!("=====================");
-    errhandling::errhandling_examples();
+    oop::oop_examples();
 }
