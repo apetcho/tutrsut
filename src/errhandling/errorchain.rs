@@ -10,6 +10,12 @@ mod errors {
         foreign_links{
             Io(::std::io::Error);
         }
+
+        errors {
+            NoArgument(t: String){
+                display("no argument prodived: '{}'", t)
+            }
+        }
     }
 }
 
@@ -37,6 +43,9 @@ mod demo {
             match e.kind() {
                 &ErrorKind::Msg(ref s) => println!("msg {}", s),
                 &ErrorKind::Io(ref s) => println!("io {}", s),
+                &ErrorKind::NoArgument(ref s) => {
+                    println!("no argument {:?}", s);
+                }
                 _ => println!(),
             }
         }
