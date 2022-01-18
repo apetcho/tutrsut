@@ -26,6 +26,16 @@ mod simerr {
     }
 }
 
+// --
+mod erchn {
+    use super::*;
+
+    //
+    pub fn erchn_examples() {
+        errorchain::errorchain_examples();
+    }
+}
+
 // ---
 pub fn errhandling_examples() {
     println!("--------------------------");
@@ -36,4 +46,8 @@ pub fn errhandling_examples() {
     println!("   SIMPLE-ERROR FOR SIMPLE ERRORS   ");
     println!("------------------------------------");
     simerr::simerr_examples();
+    println!("------------------------------------");
+    println!("   ERROR-CHAIN FOR SERIOUS ERRORS   ");
+    println!("------------------------------------");
+    erchn::erchn_examples();
 }

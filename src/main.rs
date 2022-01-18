@@ -5,6 +5,8 @@ mod errhandling;
 #[allow(unused_imports)]
 #[macro_use]
 extern crate simple_error;
+#[macro_use]
+extern crate error_chain;
 
 // -----------
 // MAIN DRIVER
