@@ -29,7 +29,16 @@ mod demo {
     pub fn demo_examples() {
         if let Err(e) = run() {
             println!("Error: {}", e);
-            std::process::exit(1);
+            //std::process::exit(1);
+        }
+
+        // ---
+        if let Err(e) = run() {
+            match e.kind() {
+                &ErrorKind::Msg(ref s) => println!("msg {}", s),
+                &ErrorKind::Io(ref s) => println!("io {}", s),
+                _ => println!(),
+            }
         }
     }
 }
