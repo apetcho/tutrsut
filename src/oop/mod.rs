@@ -1,6 +1,7 @@
 //! Object-Orientation in Rust
 mod animals;
 mod genducks;
+mod inheritance;
 mod traitobjs;
 
 mod ooptut {
@@ -19,6 +20,11 @@ mod ooptut {
         println!("   DUCKS AND GENERICS   ");
         println!("------------------------");
         genducks::genducks_examples();
+
+        println!("-----------------------");
+        println!("   TRAIT INHERITANCE   ");
+        println!("-----------------------");
+        inheritance::inheritance_examples();
     }
 }
 
