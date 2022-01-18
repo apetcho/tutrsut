@@ -35,6 +35,12 @@ impl Quack for i32 {
         println!("");
     }
 }
+
+// ---
+fn quack_ref(q: &dyn Quack) {
+    q.quack();
+}
+
 // ---
 pub fn animals_examples() {
     let duck1 = Duck();
@@ -44,5 +50,10 @@ pub fn animals_examples() {
     let ducks: Vec<&dyn Quack> = vec![&duck1, &duck2, &parrot, &n];
     for d in &ducks {
         d.quack();
+    }
+
+    println!("quack_ref() ");
+    for d in ducks {
+        quack_ref(d);
     }
 }
