@@ -49,7 +49,35 @@ mod demo {
                 _ => println!(),
             }
         }
+
+        let _ = another_example();
     }
+    // ---
+    fn another_example() -> Result<()> {
+        use std::env::args;
+        use std::fs::File;
+        use std::io::prelude::*;
+        use std::io::BufReader;
+
+        let file = args()
+            .skip(1)
+            .next()
+            .ok_or(Error::from("filename needed"))?;
+
+        // ---- chain explicitly ----
+        let f = File::open(&file).chain_err(|| "unable to read the file")?;
+        let mut lineno = 1;
+        for line in BufReader::new(f).lines() {
+            let line = line.chain_err(|| "cannot read a line")?;
+            println!("[{}]-> {}", lineno, line);
+            lineno += 1;
+            if lineno == 10 {
+                break;
+            }
+        }
+        Ok(())
+    }
+    // ---
 }
 //
 mod erchn {
