@@ -368,3 +368,10 @@ pub fn kw_match() {
         _ => panic!(),
     }
 }
+
+// mod
+pub fn kw_mod() {
+    println!("");
+    println!("<kw>mod</kw>");
+    println!("> Organize code into [modules]");
+}
