@@ -332,3 +332,17 @@ pub fn kw_loop() {
     };
     println!("something = {}", something);
 }
+
+// match
+pub fn kw_match() {
+    println!("");
+    println!("<kw>match</kw>");
+    println!("> Control flow based on pattern matching.");
+    //
+    let opt = Option::None::<usize>;
+    let x = match opt {
+        Some(int) => int,
+        None => 10,
+    };
+    println!("x = {}", x);
+}

@@ -37,4 +37,6 @@ pub fn kwtut_examples() {
     kwtut::kw_while();
     // 17)
     kwtut::kw_loop();
+    // 18)
+    kwtut::kw_match();
 }
