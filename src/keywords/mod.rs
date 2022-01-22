@@ -11,4 +11,6 @@ pub fn kwtut_examples() {
     kwtut::kw_const();
     // 04)
     kwtut::kw_continue();
+    // 05)
+    kwtut::kw_crate();
 }

@@ -95,3 +95,9 @@ pub fn kw_continue() {
     }
     println!("");
 }
+
+// crate
+pub fn kw_crate() {
+    println!("<kw>crate</kw>");
+    println!("> Rust binary or library");
+}
