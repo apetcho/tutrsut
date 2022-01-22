@@ -137,3 +137,36 @@ pub fn kw_else() {
         println!("phew, nothing's broken");
     }
 }
+
+// enum
+pub fn kw_enum() {
+    println!("");
+    println!("<kw>enum</kw>");
+    println!("> A type that can be any one of several variants");
+    #[allow(dead_code)]
+    enum SimpleEnum {
+        FirstVariant,
+        SecondVariant,
+        ThirdVariant,
+    }
+
+    #[allow(dead_code)]
+    enum Location {
+        Unknown,
+        Anonymous,
+        Known(i32),
+    }
+
+    #[allow(dead_code)]
+    enum ComplexEnum {
+        Nothing,
+        Something(u32),
+        LostOfThings {
+            usual_struct_stuff: bool,
+            blah: String,
+        },
+    }
+
+    #[allow(dead_code)]
+    enum EmptyEnum {}
+}
