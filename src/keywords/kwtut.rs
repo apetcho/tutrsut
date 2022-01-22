@@ -170,3 +170,10 @@ pub fn kw_enum() {
     #[allow(dead_code)]
     enum EmptyEnum {}
 }
+
+// extern
+pub fn kw_extern() {
+    println!("");
+    println!("<kw>extern</kw>");
+    println!("> Link to or import external code.");
+}
