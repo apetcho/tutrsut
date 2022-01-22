@@ -177,3 +177,10 @@ pub fn kw_extern() {
     println!("<kw>extern</kw>");
     println!("> Link to or import external code.");
 }
+
+// false
+pub fn kw_false() {
+    println!("");
+    println!("<kw>false</kw>");
+    println!("> A value of type [`bool`] representing logical **false**");
+}

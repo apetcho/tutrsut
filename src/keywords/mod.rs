@@ -19,4 +19,6 @@ pub fn kwtut_examples() {
     kwtut::kw_enum();
     // 08)
     kwtut::kw_extern();
+    // 09)
+    kwtut::kw_false();
 }
