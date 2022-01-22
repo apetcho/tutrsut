@@ -271,3 +271,18 @@ pub fn kw_let() {
     changing_thing = false;
     println!("changing_thing = {}", changing_thing);
 }
+
+// while
+pub fn kw_while() {
+    println!("");
+    println!("<kw>while</kw>");
+    println!("> Loop while a condition is upheld");
+    //
+    let mut counter = 0;
+    while counter < 10 {
+        print!(" {}", counter);
+        counter += 1;
+    }
+    println!("");
+    //
+}
