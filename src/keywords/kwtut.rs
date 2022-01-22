@@ -345,4 +345,12 @@ pub fn kw_match() {
         None => 10,
     };
     println!("x = {}", x);
+    let anum = Option::Some(10);
+    match anum {
+        Some(x) if x <= 5 => println!("0 to 5 num = {}", x),
+        Some(x @ 6..=10) => println!("6 to 10 num = {}", x),
+        None => panic!(),
+        // all other numbers
+        _ => panic!(),
+    }
 }
