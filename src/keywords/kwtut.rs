@@ -241,3 +241,10 @@ pub fn kw_if() {
         println!("{} double that and you get {}!", greeting, x * 2);
     }
 }
+
+// impl
+pub fn kw_impl() {
+    println!("");
+    println!("<kw>impl</kw>");
+    println!("> Implement some functionality for a type");
+}
