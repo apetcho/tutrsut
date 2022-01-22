@@ -353,4 +353,18 @@ pub fn kw_match() {
         // all other numbers
         _ => panic!(),
     }
+    //
+    enum Outer {
+        Double(Option<u8>, Option<String>),
+        #[allow(dead_code)]
+        Single(Option<u8>),
+        #[allow(dead_code)]
+        Empty,
+    }
+    let get_inner = Outer::Double(None, Some(String::new()));
+    match get_inner {
+        Outer::Double(None, Some(st)) => println!("==> {}", st),
+        Outer::Single(opt) => println!("{:?}", opt),
+        _ => panic!(),
+    }
 }
