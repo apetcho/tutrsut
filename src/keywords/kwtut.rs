@@ -255,3 +255,19 @@ pub fn kw_in() {
     println!("<kw>in</kw>");
     println!("> Iterate over a series of values with [`for`]");
 }
+
+// let
+pub fn kw_let() {
+    println!("");
+    println!("<kw>let</kw>");
+    println!("> Bind a value to a variable");
+    let thing1: i32 = 100;
+    let thing2 = 200 + thing1;
+    println!("thing1 = {}", thing1);
+    println!("thing2 = {}", thing2);
+    //
+    #[allow(unused_assignments)]
+    let mut changing_thing = true;
+    changing_thing = false;
+    println!("changing_thing = {}", changing_thing);
+}
