@@ -229,4 +229,15 @@ pub fn kw_if() {
     } else {
         println!("everything's fine!");
     }
+    // expression
+    let rude = true;
+    let greeting = if rude {
+        "super nerd."
+    } else {
+        "Hello, friend!"
+    };
+    println!("greeting = {}", greeting);
+    if let Ok(x) = "123".parse::<i32>() {
+        println!("{} double that and you get {}!", greeting, x * 2);
+    }
 }
