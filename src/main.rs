@@ -8,7 +8,8 @@
 // extern crate simple_error;
 // #[macro_use]
 // extern crate error_chain;
-mod oop;
+// mod oop;
+mod keywords;
 
 // -----------
 // MAIN DRIVER
@@ -34,8 +35,13 @@ fn main() {
     // println!("=====================");
     // errhandling::errhandling_examples();
 
-    println!("=====================");
-    println!("   ERROR HANDLING    ");
-    println!("=====================");
-    oop::oop_examples();
+    //println!("=====================");
+    //println!("   ERROR HANDLING    ");
+    //println!("=====================");
+    //oop::oop_examples();
+
+    println!("===================");
+    println!("   RUST KEYWORDS   ");
+    println!("===================");
+    keywords::kwtut_examples();
 }

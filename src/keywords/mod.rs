@@ -2,4 +2,7 @@
 
 mod kwtut;
 
-pub fn kwtut_examples() {}
+pub fn kwtut_examples() {
+    // 01) as
+    kwtut::kw_as();
+}
