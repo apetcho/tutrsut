@@ -1,6 +1,7 @@
 //! Tutorial
 // as
 pub fn kw_as() {
+    println!("");
     println!("<kw>as</kw>");
     println!("> Cast between types, or rename an import");
     let thing1: u8 = 89.0 as u8;
@@ -12,6 +13,7 @@ pub fn kw_as() {
 
 // break
 pub fn kw_break() {
+    println!("");
     println!("<kw>break</kw>");
     println!("> Exit ealy from a loop");
     let mut last = 0;
@@ -54,6 +56,7 @@ pub fn kw_break() {
 
 // const
 pub fn kw_const() {
+    println!("");
     println!("<kw>const</kw>");
     println!(
         "> Compile-time constants, compile-time evaluable function and {}",
@@ -71,6 +74,7 @@ pub fn kw_const() {
 
 // continue
 pub fn kw_continue() {
+    println!("");
     println!("<kw>continue</kw>");
     println!("> Skip to the next iteration of a loop");
     // --
@@ -98,6 +102,38 @@ pub fn kw_continue() {
 
 // crate
 pub fn kw_crate() {
+    println!("");
     println!("<kw>crate</kw>");
     println!("> Rust binary or library");
+}
+
+// else
+pub fn kw_else() {
+    println!("");
+    println!("<kw>else</kw>");
+    println!(
+        "> What expression to evaluate when an [`if`] condition evaluate to {}",
+        "[`false`]."
+    );
+    let result = if true == false {
+        "oh no"
+    } else if "something" == "other thing" {
+        "oh dear"
+    } else if let Some(200) = "blarg".parse::<i32>().ok() {
+        "uh oh"
+    } else {
+        println!("Sneaky side effect.");
+        "phew, nothing's broken"
+    };
+    println!("result = {}", result);
+    //
+    if true == false {
+        println!("oh no");
+    } else if "something" == "other thing" {
+        println!("oh dear");
+    } else if let Some(200) = "blarg".parse::<i32>().ok() {
+        println!("uh oh");
+    } else {
+        println!("phew, nothing's broken");
+    }
 }
