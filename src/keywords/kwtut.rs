@@ -68,3 +68,30 @@ pub fn kw_const() {
     const WORDS: &str = "Hello Rust!";
     println!("WORDS = {}", WORDS);
 }
+
+// continue
+pub fn kw_continue() {
+    println!("<kw>continue</kw>");
+    println!("> Skip to the next iteration of a loop");
+    // --
+    for number in 1..=10 {
+        if number % 2 == 0 {
+            continue;
+        }
+        print!(" {}", number);
+    }
+    println!("");
+    // -- Print Odd numbers under 30 with unit <= 5
+    'tens: for ten in 0..3 {
+        '_units: for unit in 0..=9 {
+            if unit % 2 == 0 {
+                continue;
+            }
+            if unit > 5 {
+                continue 'tens;
+            }
+            print!(" {}", ten * 10 + unit);
+        }
+    }
+    println!("");
+}
