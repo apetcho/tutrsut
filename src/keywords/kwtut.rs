@@ -51,3 +51,17 @@ pub fn kw_break() {
     };
     println!("> result = {}", result);
 }
+
+// const
+pub fn kw_const() {
+    println!("<kw>const</kw>");
+    println!(
+        "> Compile-time constants, compile-time evaluable function and {}",
+        "raw pointers."
+    );
+    //
+    const THING: u32 = 0xABAD1DEA;
+    println!("THING = {}", THING);
+    let foo = 123 + THING;
+    println!("foo = {}", foo);
+}
