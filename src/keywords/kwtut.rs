@@ -285,4 +285,13 @@ pub fn kw_while() {
     }
     println!("");
     //
+    let mut i = 1;
+    while i < 100 {
+        i *= 2;
+        print!(" {}", i);
+        if i == 64 {
+            break;
+        }
+    }
+    println!("");
 }
