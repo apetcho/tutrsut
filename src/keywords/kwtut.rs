@@ -300,9 +300,26 @@ pub fn kw_while() {
         if i == 10 {
             counter = None;
         } else {
-            println!("{}", i);
+            print!("{}", i);
             counter = Some(i + 1);
         }
     }
+    println!("");
     println!("counter = {:?}", counter);
+}
+
+// loop
+pub fn kw_loop() {
+    println!("");
+    println!("<kw>loop</kw>");
+    println!("> Loop indefinitely");
+    let mut i = 1;
+    loop {
+        println!("i is {}", i);
+        if i > 100 {
+            break;
+        }
+        i *= 2;
+    }
+    println!("i = {}", i);
 }
