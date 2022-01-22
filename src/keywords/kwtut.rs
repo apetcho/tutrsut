@@ -64,4 +64,7 @@ pub fn kw_const() {
     println!("THING = {}", THING);
     let foo = 123 + THING;
     println!("foo = {}", foo);
+    //
+    const WORDS: &str = "Hello Rust!";
+    println!("WORDS = {}", WORDS);
 }
