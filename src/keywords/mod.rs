@@ -25,4 +25,6 @@ pub fn kwtut_examples() {
     kwtut::kw_fn();
     // 11)
     kwtut::kw_for();
+    // 12)
+    kwtut::kw_if();
 }

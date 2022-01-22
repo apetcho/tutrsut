@@ -217,3 +217,16 @@ pub fn kw_for() {
         }
     }
 }
+
+// if
+pub fn kw_if() {
+    println!("");
+    println!("<kw>if</kw>");
+    println!("> Evaluate a block if a condition holds");
+    // logic
+    if 1 == 2 {
+        println!("whoops, mathematics broke");
+    } else {
+        println!("everything's fine!");
+    }
+}
