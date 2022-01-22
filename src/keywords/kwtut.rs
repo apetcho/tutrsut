@@ -248,3 +248,10 @@ pub fn kw_impl() {
     println!("<kw>impl</kw>");
     println!("> Implement some functionality for a type");
 }
+
+// in
+pub fn kw_in() {
+    println!("");
+    println!("<kw>in</kw>");
+    println!("> Iterate over a series of values with [`for`]");
+}
