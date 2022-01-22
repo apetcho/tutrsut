@@ -5,4 +5,6 @@ mod kwtut;
 pub fn kwtut_examples() {
     // 01) as
     kwtut::kw_as();
+    // 02)
+    kwtut::kw_break();
 }
