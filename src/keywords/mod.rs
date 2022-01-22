@@ -21,4 +21,6 @@ pub fn kwtut_examples() {
     kwtut::kw_extern();
     // 09)
     kwtut::kw_false();
+    // 10)
+    kwtut::kw_fn();
 }

@@ -184,3 +184,10 @@ pub fn kw_false() {
     println!("<kw>false</kw>");
     println!("> A value of type [`bool`] representing logical **false**");
 }
+
+// fn
+pub fn kw_fn() {
+    println!("");
+    println!("<kw>fn<kw>");
+    println!("> A function or function pointer");
+}
