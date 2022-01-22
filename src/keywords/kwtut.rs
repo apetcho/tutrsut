@@ -25,4 +25,29 @@ pub fn kw_break() {
     }
 
     println!("\nAfter:: last = {}", last);
+    'outer: for i in 1..=5 {
+        println!("outer iteration (i): {}", i);
+        '_inner: for j in 1..=200 {
+            println!("      inner iteration (j): {}", j);
+            if j >= 3 {
+                break; // breaks from inner loop, lets, outer loop continue.
+            }
+            if i >= 2 {
+                break 'outer; // breaks from outer loop
+            }
+        }
+    }
+    println!("Bye!");
+
+    // --
+    let (mut a, mut b) = (1, 1);
+    let result = loop {
+        if b > 10 {
+            break b;
+        }
+        let c = a + b;
+        a = b;
+        b = c;
+    };
+    println!("> result = {}", result);
 }
